@@ -36,10 +36,10 @@ def main():
             if entity.check_collision(player):
                 print("Game over!")
                 sys.exit(1)
-        for entity in asteroids:
+        for asteroid in asteroids:
             for shot in shots:
-                if entity.check_collision(shot):
-                    entity.kill()
+                if asteroid.check_collision(shot):
+                    asteroid.split()
                     shot.kill()
         for entity in drawable:
             entity.draw(screen)
